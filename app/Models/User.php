@@ -42,4 +42,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public static function generateRegistrationNumber($batch)
+    {
+        // Get the latest registration number for the given batch
+        $latestStudent = self::where('batch', $batch)->latest('regNo')->first();
+
+        if (!$latestStudent) {
+            $counter = 1;
+        } else {
+            $latestNumber = $latestStudent->regNo;
+            $counter = (int)substr($latestNumber, -3) + 1;
+        }
+
+        $registrationNumber = $batch .'-'. str_pad($counter, 3, '0', STR_PAD_LEFT);
+
+        return $registrationNumber;
+    }
 }
+
+
