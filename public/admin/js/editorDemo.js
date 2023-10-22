@@ -59,6 +59,19 @@
       tabsize: 2
     });
   }
+  if ($("#summernoteExample1").length) {
+    $('#summernoteExample1').summernote({
+      height: 300,
+      tabsize: 2
+    });
+  }
+  /*Summernote editor*/
+  if ($("#summernoteExample1").length) {
+    $('#summernoteExample1').summernote({
+      height: 300,
+      tabsize: 2
+    });
+  }
 
   /*X-editable editor*/
   if ($('#editable-form').length) {

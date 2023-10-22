@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BatchCategory;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,21 +16,12 @@ class AdminController extends Controller
             return view('admin.adminDashboard');
         }
     }
-    public function batchView()
-    {
-        if (Auth::user()->userType==1)
-        {
-            return view('admin.batch.batchView');
-        }
-    }
-    public function addNewBatchForm()
-    {
-        if (Auth::user()->userType==1)
-        {
-            $category = BatchCategory::all();
-            return view('admin.batch.addNewBatchForm',compact('category'));
-        }
-    }
+
+
+
+
+
+//    Category
     public function addNewCategory()
     {
         if (Auth::user()->userType==1)

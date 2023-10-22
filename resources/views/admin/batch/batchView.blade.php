@@ -4,6 +4,11 @@
 @endsection
 @section('body')
     <div class="main-panel">
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">

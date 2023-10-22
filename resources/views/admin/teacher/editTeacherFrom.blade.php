@@ -28,46 +28,31 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form method="post" action="{{url('addNewTeacher')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{url('editNewTeacher',$data->id)}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <h4 class="card-title">Teacher Name</h4>
-                                    <input type="text" required name="name" class="form-control"/>
+                                    <input type="text" required name="name" value="{{$data->name}}" class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <h4 class="card-title">Email</h4>
-                                    <input type="email" required name="email" class="form-control"/>
+                                    <input type="email" required value="{{$data->email}}" name="email" class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <h4 class="card-title">Phone No</h4>
-                                    <input type="number" required name="phone" class="form-control"/>
+                                    <input type="number" value="{{$data->phone}}" required name="phone" class="form-control"/>
                                 </div>
                                 <div class="form-group">
-                                    <h4 class="card-title">Department</h4>
-                                    <input type="text" required name="department" class="form-control"/>
-                                </div>
-                                <div class="form-group">
-                                    <h4 class="card-title">Experience</h4>
-                                    <input type="text" name="experience" class="form-control"/>
-                                </div>
-                                <div class="form-group">
-                                    <h4 class="card-title">Language</h4>
-                                    <input type="text"  name="language" class="form-control"/>
-                                </div>
-                                <div class="form-group">
+                                    <img src="TeacherImage/{{$data->image}}" height="80px" width="80px" alt="">
                                     <h4 class="card-title">Image</h4>
                                     <input type="file" name="image" class="dropify" />
                                 </div>
                                 <div class="form-group">
-                                    <h4 class="card-title">About Instructor</h4>
-                                    <textarea name="description" id="summernoteExample"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <h4 class="card-title">Qualification</h4>
-                                    <textarea name="qualification"  id="summernoteExample1"></textarea>
+                                    <h4 class="card-title">Description</h4>
+                                    <textarea name="description" id="summernoteExample">{{$data->description}}</textarea>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-success btn-sm w-100">Save</button>
+                                    <button type="submit" class="btn btn-success btn-sm">Save</button>
                                 </div>
                             </form>
                         </div>

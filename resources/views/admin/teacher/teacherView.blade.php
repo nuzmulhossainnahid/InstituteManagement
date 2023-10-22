@@ -4,6 +4,11 @@
 @endsection
 @section('body')
     <div class="main-panel">
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
@@ -36,20 +41,24 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php $number = 1; ?>
+                                    @foreach($data as $data)                                    <tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>2012/08/03</td>
-                                        <td>2012/08/03</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
+                                        <td>{{$number}}</td>
+                                        <?php $number++; ?>
+                                        <td><img src="TeacherImage/{{$data->image}}" height="60px" width="80px" alt=""></td>
+                                        <td>{{$data->name}}</td>
+                                        <td>{{$data->phone}}</td>
+                                        <td>{{$data->email}}</td>
+                                        <td>{{$data->description}}</td>
 
                                         <td>
-                                            <label class="badge badge-info">On hold</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">View</button>
+                                            <a href="{{url('detailsTeacher',$data->id)}}" class="btn btn-outline-primary m-1">Details</a>
+                                            <a href="{{url('editTeacherFrom',$data->id)}}" class="btn btn-outline-primary m-1">Edit</a>
+                                            <a href="{{url('deleteTeacherFrom',$data->id)}}" class="btn btn-outline-primary m-1" onclick="return confirm('Are you sure?')">Delete</a>
                                         </td>
                                     </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -62,4 +71,8 @@
 
     </div>
 @endsection
+
+@section('script')
+
+    @endsection
 

@@ -71,6 +71,7 @@
           },
           confirm: {
             text: "OK",
+
             value: true,
             visible: true,
             className: "btn btn-primary",

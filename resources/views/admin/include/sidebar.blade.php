@@ -23,13 +23,13 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{url('batchView')}}">
-                <i class="fa fa-puzzle-piece menu-icon"></i>
+                <i class="fa fa-list menu-icon"></i>
                 <span class="menu-title">Batch</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{url('teacherView')}}">
-                <i class="fa fa-address-card-o menu-icon"></i>
+                <i class="far fa-address-card menu-icon"></i>
                 <span class="menu-title">Teacher</span>
             </a>
         </li>

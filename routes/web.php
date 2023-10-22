@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\BatchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,9 @@ Route::get('dashboard', [UserController::class, 'dashboard']);
 //Admin
 Route::get('adminDashboard', [AdminController::class, 'adminDashboard']);
 //Batch
-Route::get('batchView', [AdminController::class, 'batchView']);
-Route::get('addNewBatchForm', [AdminController::class, 'addNewBatchForm']);
+Route::get('batchView', [BatchController::class, 'batchView']);
+Route::get('addNewBatchForm', [BatchController::class, 'addNewBatchForm']);
+Route::post('newBatch', [BatchController::class, 'newBatch']);
 
 //addNewCategory
 Route::get('addNewCategory', [AdminController::class, 'addNewCategory']);
@@ -50,3 +52,8 @@ Route::get('deleteBatchCategory/{id}', [AdminController::class, 'deleteBatchCate
 
 Route::get('teacherView', [TeacherController::class, 'teacherView']);
 Route::get('addNewTeacherForm', [TeacherController::class, 'addNewTeacherForm']);
+Route::post('addNewTeacher', [TeacherController::class, 'addNewTeacher']);
+Route::get('deleteTeacherFrom/{id}', [TeacherController::class, 'deleteTeacherFrom']);
+Route::get('editTeacherFrom/{id}', [TeacherController::class, 'editTeacherFrom']);
+Route::post('editNewTeacher/{id}', [TeacherController::class, 'editNewTeacher']);
+Route::get('detailsTeacher/{id}', [TeacherController::class, 'detailsTeacher']);
