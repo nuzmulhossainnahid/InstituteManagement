@@ -40,7 +40,11 @@ Route::get('adminDashboard', [AdminController::class, 'adminDashboard']);
 //Batch
 Route::get('batchView', [BatchController::class, 'batchView']);
 Route::get('addNewBatchForm', [BatchController::class, 'addNewBatchForm']);
+
 Route::post('newBatch', [BatchController::class, 'newBatch']);
+Route::get('deleteBatch/{id}', [BatchController::class, 'deleteBatch']);
+Route::get('editBatch/{id}', [BatchController::class, 'editBatch']);
+Route::post('editBatchSubmit/{id}', [BatchController::class, 'editBatchSubmit']);
 
 //addNewCategory
 Route::get('addNewCategory', [AdminController::class, 'addNewCategory']);

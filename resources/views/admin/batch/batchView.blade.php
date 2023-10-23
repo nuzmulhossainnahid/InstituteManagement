@@ -43,21 +43,27 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2012/08/03</td>
-                                        <td>2012/08/03</td>
-                                        <td>Edinburgh</td>
-                                        <td>New York</td>
-                                        <td>$1500</td>
-                                        <td>$3200</td>
+                                    <?php $number = 1; ?>
+                                    @foreach($data as $data)
+                                        <tr>
+                                        <td>{{$number}}</td>
+                                            <?php $number++; ?>
+                                        <td><img src="BatchImage/{{$data->image1}}" height="60px" width="80px" alt=""></td>
+                                        <td>{{$data->name}}</td>
+                                        <td>{{$data->teacherName}}</td>
+                                        <td><img src="TeacherImage/{{$data->teacherImage}}" height="60px" width="80px" alt=""></td>
+                                        <td>{{$data->price}}</td>
+                                        <td>{{$data->date}} - {{$data->time}}</td>
                                         <td>
-                                            <label class="badge badge-info">On hold</label>
+                                            <label class="badge badge-info">{{$data->student}}</label>
                                         </td>
                                         <td>
-                                            <button class="btn btn-outline-primary">View</button>
+                                            <a href="{{url('')}}" class="btn btn-outline-success w-100">View</a>
+                                            <a href="{{url('editBatch',$data->id)}}" class="btn btn-outline-primary w-100 mt-1">Edit</a>
+                                            <a href="{{url('deleteBatch',$data->id)}}" class="btn btn-outline-danger w-100 mt-1">Delete</a>
                                         </td>
                                     </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
