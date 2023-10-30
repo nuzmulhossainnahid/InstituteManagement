@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="form-group">
                                     <h4 class="card-title">Curriculum</h4>
-                                    <textarea name="curriculum" id="simpleMde">{{$data->curriculum}}</textarea>
+                                    <textarea name="curriculum" id="summernoteExample2">{{$data->curriculum}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <h4 class="card-title">Course Feature</h4>

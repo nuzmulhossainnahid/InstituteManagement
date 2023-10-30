@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form-group">
                                     <h4 class="card-title">Curriculum</h4>
-                                    <textarea name="curriculum" id="simpleMde"></textarea>
+                                    <textarea name="curriculum" id="summernoteExample2"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <h4 class="card-title">Course Feature</h4>

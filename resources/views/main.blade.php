@@ -2,6 +2,7 @@
 <html class="no-js" lang="zxx">
 
 <head>
+    <base href="/public">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="EduLight - Multipurpose Education Template">
