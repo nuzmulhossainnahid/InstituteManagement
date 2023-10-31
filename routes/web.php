@@ -33,6 +33,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 //User
 Route::get('dashboard', [UserController::class, 'dashboard']);
 Route::get('courseView/{id}', [UserController::class, 'courseView']);
+Route::get('allCourse', [UserController::class, 'allCourse']);
 
 
 

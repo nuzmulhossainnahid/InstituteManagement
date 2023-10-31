@@ -72,38 +72,7 @@
                                     <ul class="nav navbar-nav">
                                         <li class="mega-menu"><a href="/" class="dropdown-toggle">Home</a>
                                         </li><!-- End .mega-menu -->
-                                        <li class="mega-menu dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses</a>
-                                            <ul class="mega-menu-block list-unstyled dropdown-menu">
-                                                <li>
-                                                    <div class="mega-menu-content clearfix">
-															<span class="mega-content-block">
-																<a href="courses-01.html">Courses One</a>
-																<a href="courses-02.html">Courses Two</a>
-																<a href="courses-03.html">Courses Three</a>
-																<a href="courses-04.html">Courses Four</a>
-																<a href="courses-05.html">Courses Five</a>
-															</span>
-                                                        <span class="mega-content-block">
-																<a href="courses-06.html">Courses Six</a>
-																<a href="course-single.html">Course Single</a>
-																<a href="#">Page One</a>
-																<a href="#">Page Two</a>
-																<a href="#">Page Three</a>
-															</span>
-                                                        <span class="mega-content-block">
-																<a href="#">Page Four</a>
-																<a href="#">Page Five</a>
-																<a href="#">Page Six</a>
-																<a href="#">Page Seven</a>
-																<a href="#">Page Eight</a>
-															</span>
-                                                        <span class="mega-content-block">
-																<img src="user/images/megamenu.jpg" alt="" class="img-responsive" />
-															</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li><!-- End .mega-menu -->
+                                        <li class="mega-menu"><a href="{{url('allCourse')}}" class="dropdown-toggle">Courses</a></li><!-- End .mega-menu -->
                                         <li class="dropdown">
                                             <a href="#">Teacher</a>
                                         </li><!-- End Teacher -->

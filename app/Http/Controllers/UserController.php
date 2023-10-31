@@ -30,6 +30,17 @@ class UserController extends Controller
             $data= Batch::find($id);
             $teacher = Teacher::find($data->teacherId);
             $category = BatchCategory::all();
-            return view('user.course.courseView',compact('data','teacher','category'));
+            $otherCourse = Batch::orderBy('id', 'DESC')->limit(4)->get();
+            $relatedCourse = Batch::where('teacherId','=',$data->teacherId)->orWhere('category','=',$data->category)->orderBy('id', 'DESC')->limit(2)->get();
+            return view('user.course.courseView',compact('data','teacher','category','otherCourse','relatedCourse'));
         }
+
+        public function allCourse()
+        {
+            $data = Batch::orderBy('id', 'DESC')->get();
+            return view('user.course.allCourse', compact('data'));
+        }
+
+
+
 }

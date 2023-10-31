@@ -248,18 +248,18 @@
                         </div><!-- Ends: .course-info-tabs -->
 
                         <div class="course-bottom-content">
-                            <div class="course-tags">
-                                <h4>Tags:</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Wordpress</a></li>
-                                    <li><a href="#">Campus</a></li>
-                                    <li><a href="#">Class</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">Loop</a></li>
-                                    <li><a href="#">Student</a></li>
-                                    <li><a href="#">University</a></li>
-                                </ul>
-                            </div><!-- Ends: .course-tags -->
+                            {{--<div class="course-tags">--}}
+                                {{--<h4>Tags:</h4>--}}
+                                {{--<ul class="list-unstyled">--}}
+                                    {{--<li><a href="#">Wordpress</a></li>--}}
+                                    {{--<li><a href="#">Campus</a></li>--}}
+                                    {{--<li><a href="#">Class</a></li>--}}
+                                    {{--<li><a href="#">Courses</a></li>--}}
+                                    {{--<li><a href="#">Loop</a></li>--}}
+                                    {{--<li><a href="#">Student</a></li>--}}
+                                    {{--<li><a href="#">University</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</div><!-- Ends: .course-tags -->--}}
 
                             <div class="course-share">
                                 <h4>Share:</h4>
@@ -278,9 +278,10 @@
                                     <span class="section-devider"><span><i class="fa fa-circle"></i></span></span>
                                 </div><!-- ends: .section-header -->
                                 <div class="related-course-slide owl-carousel">
+                                    @foreach($relatedCourse as $relatedCourse)
                                     <div class="online-course-single">
                                         <figure>
-                                            <img src="images/online-course/c01.jpg" alt="" class="img-responsive">
+                                            <img src="BatchImage/{{$relatedCourse->image1}}"  alt="" >
                                             <figcaption>
                                                 <ul class="list-unstyled">
                                                     <li><a href="#"><i class="fa fa-paper-plane-o"></i></a></li>
@@ -289,25 +290,25 @@
                                             </figcaption>
                                         </figure>
                                         <div class="online-course-details">
-                                            <p class="price-tag"><span>Price:</span> <span>$150</span></p>
-                                            <h3>Marketing Management</h3>
+                                            <p class="price-tag"><span>Price:</span> <span>{{$relatedCourse->price}}</span></p>
+                                            <h3>{{$relatedCourse->name}}</h3>
                                             <ul class="list-unstyled teacher-info">
-                                                <li><img src="images/online-course/course-author.jpg" alt="" class="img-responsove img-circle"></li>
-                                                <li>Micahel Smith</li>
+                                                <li><img src="TeacherImage/{{$relatedCourse->teacherImage}}" alt="" width="80px" height="80px" class="img-responsove img-circle"></li>
+                                                <li>{{$relatedCourse->teacherName}}</li>
                                             </ul>
                                             <div class="course-excerpt">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <span>Course Time</span>
-                                                        <span>1 Year</span>
+                                                        <span>Starting Date</span>
+                                                        <span>{{$relatedCourse->date}}</span>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <span>Total Student</span>
-                                                        <span>35</span>
+                                                        <span>{{$relatedCourse->student}}</span>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <span>Duration</span>
-                                                        <span>7:00 - 11:00</span>
+                                                        <span>{{$relatedCourse->time}}</span>
                                                     </div>
                                                 </div>
                                             </div><!-- Ends: .course-excerpt -->
@@ -325,113 +326,12 @@
                                                 </ul>
                                             </div><!-- Ends: .course-excerpt-bottom -->
                                             <div class="course-details-btn">
-                                                <a href="#">View Details</a>
+                                                <a href="{{url('courseView',$relatedCourse->id)}}">View Details</a>
                                             </div><!-- Ends: .course-details-btn -->
                                         </div><!-- Ends: .online-course-details -->
                                     </div><!-- Ends: .online-course-single -->
-                                    <div class="online-course-single">
-                                        <figure>
-                                            <img src="images/online-course/c02.jpg" alt="" class="img-responsive">
-                                            <figcaption>
-                                                <ul class="list-unstyled">
-                                                    <li><a href="#"><i class="fa fa-paper-plane-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                </ul>
-                                            </figcaption>
-                                        </figure>
-                                        <div class="online-course-details">
-                                            <p class="price-tag"><span>Price:</span> <span>$150</span></p>
-                                            <h3>Research & Development</h3>
-                                            <ul class="list-unstyled teacher-info">
-                                                <li><img src="images/online-course/course-author.jpg" alt="" class="img-responsove img-circle"></li>
-                                                <li>Micahel Smith</li>
-                                            </ul>
-                                            <div class="course-excerpt">
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <span>Course Time</span>
-                                                        <span>1 Year</span>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <span>Total Student</span>
-                                                        <span>35</span>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <span>Duration</span>
-                                                        <span>7:00 - 11:00</span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- Ends: .course-excerpt -->
-                                            <div class="course-excerpt-bottom">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fa fa-comment"></i> 09</li>
-                                                    <li><i class="fa fa-heart"></i> 80</li>
-                                                    <li>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- Ends: .course-excerpt-bottom -->
-                                            <div class="course-details-btn">
-                                                <a href="#">View Details</a>
-                                            </div><!-- Ends: .course-details-btn -->
-                                        </div><!-- Ends: .online-course-details -->
-                                    </div><!-- Ends: .online-course-single -->
-                                    <div class="online-course-single">
-                                        <figure>
-                                            <img src="images/online-course/c03.jpg" alt="" class="img-responsive">
-                                            <figcaption>
-                                                <ul class="list-unstyled">
-                                                    <li><a href="#"><i class="fa fa-paper-plane-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                </ul>
-                                            </figcaption>
-                                        </figure>
-                                        <div class="online-course-details">
-                                            <p class="price-tag"><span>Price:</span> <span>$150</span></p>
-                                            <h3>Accounting & Finance</h3>
-                                            <ul class="list-unstyled teacher-info">
-                                                <li><img src="images/online-course/course-author.jpg" alt="" class="img-responsove img-circle"></li>
-                                                <li>Micahel Smith</li>
-                                            </ul>
-                                            <div class="course-excerpt">
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <span>Course Time</span>
-                                                        <span>1 Year</span>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <span>Total Student</span>
-                                                        <span>35</span>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <span>Duration</span>
-                                                        <span>7:00 - 11:00</span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- Ends: .course-excerpt -->
-                                            <div class="course-excerpt-bottom">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fa fa-comment"></i> 09</li>
-                                                    <li><i class="fa fa-heart"></i> 80</li>
-                                                    <li>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                        <span><i class="fa fa-star"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- Ends: .course-excerpt-bottom -->
-                                            <div class="course-details-btn">
-                                                <a href="#">View Details</a>
-                                            </div><!-- Ends: .course-details-btn -->
-                                        </div><!-- Ends: .online-course-details -->
-                                    </div><!-- Ends: .online-course-single -->
-                                </div>
+                                   @endforeach
+                                    </div>
                             </div><!-- Ends: .related-course -->
                         </div><!-- Ends: .course-bottom-content -->
 
@@ -483,14 +383,16 @@
                         <div class="sidebar-widget">
                             <h3 class="widget-title">Other Courses</h3>
                             <div class="widget-content courses-widget">
+
+                                @foreach($otherCourse as $otherCourse)
                                 <div class="sidebar-course-single">
                                     <div class="course-image">
-                                        <img src="http://placehold.it/100x100" alt="">
+                                        <img src="BatchImage/{{$otherCourse->image1}}" alt="">
                                     </div>
                                     <div class="course-prefix">
-                                        <h4><a href="#">Internet Marketing Course</a></h4>
+                                        <h4><a href="{{url('courseView',$otherCourse->id)}}">{{$otherCourse->name}}</a></h4>
                                         <ul class="list-unstyled">
-                                            <li><a href="#">$100</a></li>
+                                            <li><a href="{{url('courseView',$otherCourse->id)}}">{{$otherCourse->price}}</a></li>
                                             <li>
                                                 <span><i class="fa fa-star"></i></span>
                                                 <span><i class="fa fa-star"></i></span>
@@ -501,60 +403,7 @@
                                         </ul>
                                     </div>
                                 </div><!-- Ends: .sidebar-course-single -->
-                                <div class="sidebar-course-single">
-                                    <div class="course-image">
-                                        <img src="http://placehold.it/100x100" alt="">
-                                    </div>
-                                    <div class="course-prefix">
-                                        <h4><a href="#">Internet Marketing Course</a></h4>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#">$100</a></li>
-                                            <li>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!-- Ends: .sidebar-course-single -->
-                                <div class="sidebar-course-single">
-                                    <div class="course-image">
-                                        <img src="http://placehold.it/100x100" alt="">
-                                    </div>
-                                    <div class="course-prefix">
-                                        <h4><a href="#">Internet Marketing Course</a></h4>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#">$100</a></li>
-                                            <li>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!-- Ends: .sidebar-course-single -->
-                                <div class="sidebar-course-single">
-                                    <div class="course-image">
-                                        <img src="http://placehold.it/100x100" alt="">
-                                    </div>
-                                    <div class="course-prefix">
-                                        <h4><a href="#">Internet Marketing Course</a></h4>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#">$100</a></li>
-                                            <li>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!-- Ends: .sidebar-course-single -->
+                                @endforeach
                             </div>
                         </div><!-- Ends: .sidebar-widget -->
                     </div><!-- Ends: .single-course-sidebar -->
